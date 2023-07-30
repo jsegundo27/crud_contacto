@@ -1,10 +1,10 @@
 <?php 
     require 'controller_contacto.php';
+     require 'buscar_contacto.php';
+  
+   
 
-    $rest_contacto=consultarPersona();
-    $total_cantidad=consultarTotal();
-
-    
+  
         
 ?>
 <!DOCTYPE html>
@@ -27,16 +27,16 @@
 
    <div class="contacto__header">
     <h3>Teléfono</h3>
-    <p><?php echo $total_cantidad ?> contacto</p>
-
-   </div>
+  <?php 
+    echo  $total_res['total'];  
+   ?>
    <br>
  
    <div class="contacto__conteiner card ">
     
     <table class="table contacto__table ">
        <div class="contacto__botones">
-            <form action="buscar_contacto.php" method="POST">
+            <form action="index.php" method="POST">
                 <input type="text" class="form-control" name="nombre_contacto" style="margin-right:10px" >
                 <button  class="icono_delete btn"  href="" type="submit"> <img class="contacto__iconos" src="assets/imagenes/search.png" alt=""></button>
             </form>
@@ -52,7 +52,12 @@
         </thead>
         <tbody>
 
-        <?php  while($row =mysqli_fetch_array($rest_contacto)){ ?>
+        <?php 
+        $total=0;
+         while($row =mysqli_fetch_array($reques_busqueda)){
+
+           
+            ?>
         
             <tr>
                 <td scope="row"> <?php echo $row['id']; ?>  </td>
@@ -64,16 +69,20 @@
               
             </tr>
            
-        <?php } ?>
-       
-
+        <?php } 
+          
+        ?>
+    
+        
         </tbody>
         </table>
  
-       
+        
+
+   </div>
         
    </div>
-   
+  
     
    
     <script src="assets/bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js" ></script>
