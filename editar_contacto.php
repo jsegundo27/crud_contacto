@@ -1,8 +1,7 @@
 <?php 
-    require 'controller_contacto.php';
+    require 'obtener_contacto.php';
            
-    $id=$_GET['id'];
-    $consulta_editar=consultarEditar($id);
+
      
  
 ?>
@@ -19,9 +18,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+<div class="contacto__main">
 <br>
-<h2 class="text-center ">editar</h2>
+
+<h2 class="text-center " >editar</h2>
 <div class="regresar__contenedor">
 <a class="btn-regresar" href="index.php"><img class="contacto__iconos" src="assets/imagenes/previous.png" alt=""></a>
 
@@ -58,6 +58,6 @@
    
         
 </div>
-
+</div>
 </html>
    

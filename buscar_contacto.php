@@ -1,5 +1,5 @@
 <?php
-
+require 'conexion.php';
 
 if (!isset($_POST['nombre_contacto'])) {
     $_POST['nombre_contacto']='';

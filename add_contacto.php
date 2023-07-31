@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+<div class="contacto__main">
 <br>
 <h2 class="text-center ">Crear</h2>
 <div class="regresar__contenedor">
@@ -47,6 +47,6 @@
    
         
 </div>
-
+</div>
 </html>
    

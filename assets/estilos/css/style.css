@@ -1,23 +1,35 @@
+
+*{
+  box-sizing: border-box;
+}
 body{
-    background: #696969;
-}
+ background: #2d2d2d;
 
-.contacto__conteiner{
-  max-width: 500px;
+}
+.contacto__main{
+  background: #f2f2f2;
+  max-width: 700px;
+  height: 100vh;
   width: 100%;
-  margin: auto ;
-
+  margin: 20px auto;
+  border:1px solid;
+  padding: 15px;
+  border-radius: 12px 10px;
 
 }
-
 .contacto__header{
-  text-align: center;
-    color: #fff;
-   
-
+  margin-top: 100px;
+  margin-bottom: 105px;
 }
-.contacto__header h3 {
-    font-size: 40px;
+
+.contacto__titulo{
+  text-align: center;
+  color: #2d2d2d;
+  font-size: 40px;
+}
+.contacto__cantitad-total {
+    font-size: 20px;
+    text-align: center;
 }
 .contacto__table{
     margin-top: 20px;
@@ -44,7 +56,7 @@ body{
 .contacto__botones{
   display: flex;
   justify-content: right;
-  background: #696969;
+
   padding: 10px;
 }
 .icono__add{
@@ -59,4 +71,35 @@ body{
 .contacto__botones{
   display: flex;
   justify-content: space-around;
+}
+
+.contacto__lista{
+  border-radius: 30px;
+  border: 1px solid #f2f2f2;
+  background: #fff;
+  padding: 10px;
+  margin-top: 20px;
+ 
+}
+.contacto__item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+ 
+}
+.contacto__action{
+  margin-left: 10px;
+}
+.contacto__info{
+  text-transform: uppercase;
+  font-size: 20px;
+  flex: 2;
+  color: #2f2f2f;
+}
+.contacto__img{
+  margin-left: 10px;
+  margin-right: 30px;
+  width: 40px;
+  height: 40px;
 }

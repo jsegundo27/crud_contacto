@@ -1,11 +1,5 @@
 <?php 
-    require 'controller_contacto.php';
-     require 'buscar_contacto.php';
-  
-   
-
-  
-        
+     require 'buscar_contacto.php';    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,65 +19,56 @@
 
 <body>
 
-   <div class="contacto__header">
-    <h3>Teléfono</h3>
-  <?php 
-    echo  $total_res['total'];  
-   ?>
-   <br>
+<div class="contacto__main">
+    <div class="contacto__header">
+        <h3 class="contacto__titulo">Teléfono</h3>
+        <p class="contacto__cantitad-total"><?php echo $total_res['total'] ?> contactos</p>
+
+    </div>
+    <br>
  
-   <div class="contacto__conteiner card ">
-    
-    <table class="table contacto__table ">
-       <div class="contacto__botones">
-            <form action="index.php" method="POST">
-                <input type="text" class="form-control" name="nombre_contacto" style="margin-right:10px" >
-                <button  class="icono_delete btn"  href="" type="submit"> <img class="contacto__iconos" src="assets/imagenes/search.png" alt=""></button>
-            </form>
-            <a class="icono__add btn" style="margin-left:10px"  href="add_contacto.php" > <img class="contacto__iconos" src="assets/imagenes/plus.png" alt=""></a>
-      </div>
-
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre de Contacto</th>
-            <th></th>
-            </tr>
-        </thead>
-        <tbody>
-
-        <?php 
-        $total=0;
-         while($row =mysqli_fetch_array($reques_busqueda)){
-
-           
-            ?>
+   <div class="contacto__conteiner  ">
         
-            <tr>
-                <td scope="row"> <?php echo $row['id']; ?>  </td>
-                <td class="contacto__columna"><?php echo $row['nombre']; ?> 
-                 <p class="contacto__ocultar-columna"><?php echo $row['telefono'] ?></p>
-               </td>
-               <td><a href="<?= 'editar_contacto.php?id='.$row["id"]?>"><img class="contacto__iconos" src="assets/imagenes/pen.png" alt=""></a>
-               <a href="<?= 'delete_contacto.php?id='.$row["id"]?>"><img class="contacto__iconos" src="assets/imagenes/remove.png" alt=""></a></td>
+
+            <table class="table contacto__table ">
+                <div class="contacto__botones" style="">
+                    <form action="index.php" method="POST">
+                        <input type="text" class="form-control" name="nombre_contacto" style="margin-right:10px" >
+                        <button  class="icono_delete btn"  href="" type="submit"> <img class="contacto__iconos" src="assets/imagenes/search.png" alt=""></button>
+                    </form>
+                    <a class="icono__add btn" style="margin-left:10px"  href="add_contacto.php" > <img class="contacto__iconos" src="assets/imagenes/plus.png" alt=""></a>
+                </div> 
+                <?php 
+                    $total=0;
+                    while($row =mysqli_fetch_array($reques_busqueda)){
+                    ?>
+                <div class="contacto__lista">
+                   
+                    <div class="contacto__item">
+                        <img class="contacto__img contacto__iconos" src="assets/imagenes/user.png" alt="">
+                        <h3 class="contacto__info" ><?php echo $row['nombre']; ?></h3>
+                        <p class="contacto__ocultar-columna"><?php echo $row['telefono'] ?></p>
+                       <div class="contacto__action">
+                       <a href="<?= 'editar_contacto.php?id='.$row["id"]?>"><img class="contacto__iconos" src="assets/imagenes/pen.png" alt=""></a>
+                        <a href="<?= 'delete_contacto.php?id='.$row["id"]?>"><img class="contacto__iconos" src="assets/imagenes/remove.png" alt=""></a>
+                       </div>
+                    </div>
+                   
+
+                </div>
+                <?php } ?>
+               
+               
               
-            </tr>
-           
-        <?php } 
-          
-        ?>
-    
-        
-        </tbody>
-        </table>
+            </table>
  
         
 
-   </div>
+    </div>
         
-   </div>
+</div>
   
-    
+
    
     <script src="assets/bootstrap-5.3.1-dist/js/bootstrap.bundle.min.js" ></script>
 </body>
