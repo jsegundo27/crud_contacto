@@ -1,0 +1,13 @@
+   /**
+  
+    require 'conexion.php';
+    $cnn=conectar();
+    $cantidad=0;
+    $sql="select * from persona";
+    $result = mysqli_query($cnn, $sql);
+    $total= mysqli_query($cnn, $sql);
+    while($res =mysqli_fetch_array($total)){
+        $cantidad=$cantidad+1;
+    }
+
+ **/
