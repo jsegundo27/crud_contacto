@@ -3,6 +3,9 @@
 
     $rest_contacto=consultarPersona();
     $total_cantidad=consultarTotal();
+
+    
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +36,7 @@
     
     <table class="table contacto__table ">
        <div class="contacto__botones">
-            <form action="buscar_contacto.php" method="post">
+            <form action="buscar_contacto.php" method="POST">
                 <input type="text" class="form-control" name="nombre_contacto" style="margin-right:10px" >
                 <button  class="icono_delete btn"  href="" type="submit"> <img class="contacto__iconos" src="assets/imagenes/search.png" alt=""></button>
             </form>
